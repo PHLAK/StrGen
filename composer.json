@@ -1,7 +1,7 @@
 {
-    "name": "phlak/phppass",
-    "description": "Generate random passwords",
-    "keywords": ["password", "generation", "hashing"],
+    "name": "phlak/strgen",
+    "description": "Generate random strings",
+    "keywords": ["string", "generation", "password", "salt"],
     "license": "MIT",
     "authors": [
         {
@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-0": {
-            "PhpPass": "src/"
+            "StrGen": "src/"
         }
     }
 }
