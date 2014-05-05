@@ -3,7 +3,7 @@ StrGen
 
 Generate random strings.
 
-Like this project? Donate with Bitcoin: ``
+Like this project? Donate with Bitcoin: `1K9nTnzobNTHxweMWh9Y7kdbaUvbVm6XoP`
 
 ### Install with Composer
 
