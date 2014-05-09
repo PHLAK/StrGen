@@ -76,7 +76,6 @@
          * @param bool $strict If true, no character will be repeated
          *
          * @return string Random string of specified length
-         * @access public
          */
         public function generate($length, $strict = false) {
 
@@ -99,7 +98,7 @@
                 $characterSet = str_shuffle($this->characterSet);
 
                 // Pick a random starting position
-                $start = mt_rand(0, strlen($characterSet) - $length);
+                $start = $this->randInt(strlen($characterSet) - $length);
 
                 // Get substring from character set
                 $string = substr($characterSet, $start, $length);
@@ -110,7 +109,7 @@
                 while (strlen($string) < $length) {
 
                     // Pick a random character from the pool of available characters
-                    $char = substr($this->characterSet, mt_rand(0, strlen($this->characterSet) - 1), 1);
+                    $char = substr($this->characterSet, $this->randInt(strlen($this->characterSet) - 1), 1);
 
                     // Append character to string
                     $string = $string . $char;
@@ -121,6 +120,30 @@
 
             // Return the string
             return $string;
+
+        }
+
+
+        /**
+         * Generate a random integer.
+         *
+         * @param  int $max Maximum integer value to generate
+         *
+         * @return int      A random integer
+         */
+        private function randInt($max) {
+
+            // Generate random 32-bit integer
+            $randomInt = hexdec(bin2hex(openssl_random_pseudo_bytes(4)));
+
+            if ($max > 0) {
+
+                // Return integer within limits
+                return $randomInt % $max;
+
+            }
+
+            return $randomInt;
 
         }
 
