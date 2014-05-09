@@ -1,6 +1,6 @@
 {
     "name": "phlak/strgen",
-    "description": "Generate random strings",
+    "description": "Generate random strings (passwords / salts)",
     "keywords": ["string", "generation", "password", "salt"],
     "license": "MIT",
     "authors": [
