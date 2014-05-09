@@ -7,9 +7,6 @@
     /**
      * Random string generation library.
      *
-     * DISCLAIMER: This does NOT generate cryptographically secure random data!
-     * However, the randomly generated strings should suffice for user as random
-     * passwords or salts.
      *
      * This software is liscensed under the MIT License.
      *
@@ -72,7 +69,7 @@
         /**
          * Generate a random string of characters with a specified length.
          *
-         * @param int $length Length of desired salt
+         * @param int $length Length of desired string
          *
          * @return string Random string of specified length
          */
