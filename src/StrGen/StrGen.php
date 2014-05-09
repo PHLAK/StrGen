@@ -108,21 +108,20 @@
          *
          * @param  int $max Maximum integer value to generate
          *
-         * @return int      A random integer
+         * @return int A random integer
          */
         private function randInt($max) {
+
+            // Enforce a valid max
+            if (!isset($max) || $max <= 0) {
+                throw new Exception('Invalid maximum length');
+            }
 
             // Generate random 32-bit integer
             $randomInt = hexdec(bin2hex(openssl_random_pseudo_bytes(4)));
 
-            if ($max > 0) {
-
-                // Return integer within limits
-                return $randomInt % $max;
-
-            }
-
-            return $randomInt;
+            // Return integer within limits
+            return $randomInt % $max;
 
         }
 
