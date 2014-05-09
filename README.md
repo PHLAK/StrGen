@@ -1,25 +1,31 @@
 StrGen
 ======
 
-Generate random strings.
+Generate random strings (passwords / salts).
 
 Like this project? Donate with Bitcoin: `1K9nTnzobNTHxweMWh9Y7kdbaUvbVm6XoP`
 
+
 ### Install with Composer
 
-    $ composer.phar require phlak/strgen:1.0.*
+```bash
+$ composer.phar require phlak/strgen:1.1.*
+```
+
 
 ### Example usage
 
-    // Initialize StrGen
-    $strGen = new StrGen\StrGen(array('lower', 'upper', 'numeric'));
+```php
+// Initialize StrGen
+$string = new StrGen\StrGen(array('lower', 'upper', 'numeric'));
 
-    // Generate a random string of characters
-    $password = $strGen->generate(16); // Returns something like '8aGAgEI0fs0vQS3u'
+// Generate a random string of characters
+$password = $string->generate(16); // Returns something like '8aGAgEI0fs0vQS3u'
+```
 
 -----
 
-**Copyright (c) 2014 Chris Kankewicz <Chris@ChrisKankiewicz.com>**
+**Copyright (c) 2014 [Chris Kankewicz](https://www.chriskankiewicz.com)**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
