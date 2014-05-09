@@ -73,48 +73,27 @@
          * Generate a random string of characters with a specified length.
          *
          * @param int $length Length of desired salt
-         * @param bool $strict If true, no character will be repeated
          *
          * @return string Random string of specified length
          */
-        public function generate($length, $strict = false) {
+        public function generate($length) {
 
             // Enforce a valid length
             if (!isset($length) || $length <= 0) {
                 throw new Exception('Invalid string length');
             }
 
-            // Available caracter set must be greater than length if strict is true
-            if ($strict == true && strlen($this->characterSet) < $length) {
-                throw new Exception('Available character set is smaller than string length');
-            }
-
             // Create empty string
             $string = null;
 
-            if ($strict == true) {
+            // Repeat until desired length is reached
+            while (strlen($string) < $length) {
 
-                // Shuffle the character set
-                $characterSet = str_shuffle($this->characterSet);
+                // Pick a random character from the pool of available characters
+                $char = substr($this->characterSet, $this->randInt(strlen($this->characterSet) - 1), 1);
 
-                // Pick a random starting position
-                $start = $this->randInt(strlen($characterSet) - $length);
-
-                // Get substring from character set
-                $string = substr($characterSet, $start, $length);
-
-            } else {
-
-                // Repeat until desired length is reached
-                while (strlen($string) < $length) {
-
-                    // Pick a random character from the pool of available characters
-                    $char = substr($this->characterSet, $this->randInt(strlen($this->characterSet) - 1), 1);
-
-                    // Append character to string
-                    $string = $string . $char;
-
-                }
+                // Append character to string
+                $string = $string . $char;
 
             }
 
