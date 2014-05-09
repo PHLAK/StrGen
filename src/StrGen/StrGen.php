@@ -64,7 +64,7 @@
             }
 
             // Set the character set to the shuffled sting
-            $this->characterSet = str_shuffle($characterSet);
+            $this->characterSet = $characterSet;
 
         }
 
