@@ -17,21 +17,44 @@ $ composer.phar require phlak/strgen:1.1.*
 
 ```php
 // Initialize StrGen
-$string = new StrGen\StrGen(array('lower', 'upper', 'numeric'));
+$string = new StrGen\StrGen();
 
 // Generate a random string of characters
-$password = $string->generate(16); // Returns something like '8aGAgEI0fs0vQS3u'
+$password = $string->generate(16); // Returns something like '8a*Ag@I0*s0v[S3u'
 ```
 
 
-### Available Character Sets
+### Character Sets
 
+StrGen has a few built-in character sets available for ease of use. You can
+specify which set(s) to use by passing an array of set names to the StrGen class:
+
+
+**Example using built-in sets:**
+
+```php
+$string = new StrGen\StrGen(array('lower', 'upper', 'numeric'));
+```
+
+
+**Available Presets:**
 
   * `lower`   = `abcdefghijklmnopqrstuvwxyz`
   * `upper`   = `ABCDEFGHIJKLMNOPQRSTUVWXYZ`
   * `numeric` = `0123456789`
   * `special` = `!@#$%^&*()-_=+.?'`
   * `extra`   = `{}[]<>:;/\|~`
+
+
+You can also manually define a character set by passing a string of characters
+to the StrGen class:
+
+
+**Example custom string:**
+
+```php
+$string = new StrGen\StrGen('0123456789abcdef');
+```
 
 
 -----
