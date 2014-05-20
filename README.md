@@ -23,6 +23,17 @@ $string = new StrGen\StrGen(array('lower', 'upper', 'numeric'));
 $password = $string->generate(16); // Returns something like '8aGAgEI0fs0vQS3u'
 ```
 
+
+### Available Character Sets
+
+
+  * `lower`   = `abcdefghijklmnopqrstuvwxyz`
+  * `upper`   = `ABCDEFGHIJKLMNOPQRSTUVWXYZ`
+  * `numeric` = `0123456789`
+  * `special` = `!@#$%^&*()-_=+.?'`
+  * `extra`   = `{}[]<>:;/\|~`
+
+
 -----
 
 **Copyright (c) 2014 [Chris Kankewicz](https://www.chriskankiewicz.com)**
