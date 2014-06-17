@@ -46,11 +46,10 @@ $string = new StrGen\StrGen(array('lower', 'upper', 'numeric'));
   * `extra`   = `{}[]<>:;/\|~`
 
 
+**Custom sets:**
+
 You can also manually define a character set by passing a string of characters
 to the StrGen class:
-
-
-**Example custom string:**
 
 ```php
 $string = new StrGen\StrGen('0123456789abcdef');
