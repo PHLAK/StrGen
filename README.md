@@ -64,7 +64,7 @@ $string = new StrGen\StrGen('0123456789abcdef');
 
 -----
 
-**Copyright (c) 2014 [Chris Kankewicz](https://www.chriskankiewicz.com)**
+**Copyright (c) 2015 [Chris Kankewicz](https://www.chriskankiewicz.com)**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

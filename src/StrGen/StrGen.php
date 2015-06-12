@@ -11,7 +11,7 @@
      * This software is liscensed under the MIT License.
      *
      * @author Chris Kankiewicz (http://www.chriskankiewicz.com)
-     * @copyright 2014 Chris Kankiewicz
+     * @copyright 2015 Chris Kankiewicz
      */
     class StrGen {
 
