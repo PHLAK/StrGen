@@ -1,6 +1,10 @@
 StrGen
 ======
 
+[![Latest Stable Version](https://poser.pugx.org/phlak/strgen/v/stable.png)](https://packagist.org/packages/phlak/strgen)
+[![Total Downloads](https://poser.pugx.org/phlak/strgen/downloads.png)](https://packagist.org/packages/phlak/strgen)
+[![License](https://poser.pugx.org/phlak/strgen/license.png)](https://packagist.org/packages/phlak/strgen)
+
 Generate random strings (passwords / salts).
 
 Like this project? Donate with Bitcoin: `1K9nTnzobNTHxweMWh9Y7kdbaUvbVm6XoP`
