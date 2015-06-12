@@ -7,7 +7,8 @@ StrGen
 
 Generate random strings (passwords / salts).
 
-Like this project? Donate with Bitcoin: `1K9nTnzobNTHxweMWh9Y7kdbaUvbVm6XoP`
+Like this project? Please [donate](https://cash.me/$ChrisKankiewicz) to
+suppoort further development.
 
 
 ### Install with Composer
