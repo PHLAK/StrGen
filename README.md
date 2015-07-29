@@ -4,6 +4,7 @@ StrGen
 [![Latest Stable Version](https://poser.pugx.org/phlak/strgen/v/stable.png)](https://packagist.org/packages/phlak/strgen)
 [![Total Downloads](https://poser.pugx.org/phlak/strgen/downloads.png)](https://packagist.org/packages/phlak/strgen)
 [![License](https://poser.pugx.org/phlak/strgen/license.png)](https://packagist.org/packages/phlak/strgen)
+[![Build Status](https://travis-ci.org/PHLAK/strgen.svg?branch=master)](https://travis-ci.org/PHLAK/strgen)
 
 Generate random strings (passwords / salts).
 
