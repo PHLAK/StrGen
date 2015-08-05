@@ -5,7 +5,7 @@
     use Exception;
 
     /**
-     * Random string generation library.
+     * Random secure string generation library.
      *
      *
      * This software is liscensed under the MIT License.

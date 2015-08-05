@@ -6,7 +6,7 @@ StrGen
 [![License](https://poser.pugx.org/phlak/strgen/license.png)](https://packagist.org/packages/phlak/strgen)
 [![Build Status](https://travis-ci.org/PHLAK/strgen.svg?branch=master)](https://travis-ci.org/PHLAK/strgen)
 
-Generate random strings (passwords / salts).
+Generate securely random strings (e.g. - passwords / salts).
 
 Like this project? Please [donate](https://cash.me/$ChrisKankiewicz) to
 suppoort further development.
@@ -48,7 +48,7 @@ $string = new StrGen\StrGen(array('lower', 'upper', 'numeric'));
   * `lower`   = `abcdefghijklmnopqrstuvwxyz`
   * `upper`   = `ABCDEFGHIJKLMNOPQRSTUVWXYZ`
   * `numeric` = `0123456789`
-  * `special` = `!@#$%^&*()-_=+.?'`
+  * `special` = `!@#$%^&*()-_=+.?`
   * `extra`   = `{}[]<>:;/\|~`
 
 
