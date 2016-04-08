@@ -8,49 +8,50 @@ StrGen
 
 Generate securely random strings (e.g. - passwords / salts).
 
-Like this project? Please [donate](https://cash.me/$ChrisKankiewicz) to
-suppoort further development.
+Like this project? Keep me caffeinated by [making a donation](https://paypal.me/ChrisKankiewicz).
 
-
-### Install with Composer
+Install with Composer
+---------------------
 
 ```bash
-$ composer.phar require phlak/strgen:^1.2
+composer require phlak/strgen
 ```
 
-
-### Example usage
+Example Usage
+-------------
 
 ```php
-// Initialize StrGen
-$string = new StrGen\StrGen();
+
+// Import StrGen
+use StrGen;
+
+// Initialize the Generator
+$generator = new StrGen\Generator();
 
 // Generate a random string of characters
-$password = $string->generate(16); // Returns something like '8a*Ag@I0*s0v[S3u'
+$password = $generator->generate(16); // Returns something like '8a*Ag@I0*s0v[S3u'
 ```
-
 
 ### Character Sets
 
 StrGen has a few built-in character sets available for ease of use. You can
 specify which set(s) to use by passing an array of set names to the StrGen class:
 
-
 **Example using built-in sets:**
 
 ```php
-$string = new StrGen\StrGen(array('lower', 'upper', 'numeric'));
+generator = new StrGen\Generator(array('lower', 'upper', 'numeric'));
 ```
 
+**Available presets:**
 
-**Available Presets:**
-
-  * `lower`   = `abcdefghijklmnopqrstuvwxyz`
-  * `upper`   = `ABCDEFGHIJKLMNOPQRSTUVWXYZ`
-  * `numeric` = `0123456789`
-  * `special` = `!@#$%^&*()-_=+.?`
-  * `extra`   = `{}[]<>:;/\|~`
-
+| Key       | Character Set                |
+| --------- | ---------------------------- |
+| `lower`   | `abcdefghijklmnopqrstuvwxyz` |
+| `upper`   | `ABCDEFGHIJKLMNOPQRSTUVWXYZ` |
+| `numeric` | `0123456789`                 |
+| `special` | `!@#$%^&*()-_=+.?`           |
+| `extra`   | `{}[]<>:;/\|~`               |
 
 **Custom sets:**
 
@@ -58,9 +59,8 @@ You can also manually define a character set by passing a string of characters
 to the StrGen class:
 
 ```php
-$string = new StrGen\StrGen('0123456789abcdef');
+generator = new StrGen\Generator('0123456789abcdef');
 ```
-
 
 -----
 
