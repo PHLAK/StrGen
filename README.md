@@ -1,10 +1,11 @@
 StrGen
 ======
 
-[![Latest Stable Version](https://poser.pugx.org/phlak/strgen/v/stable.png)](https://packagist.org/packages/phlak/strgen)
-[![Total Downloads](https://poser.pugx.org/phlak/strgen/downloads.png)](https://packagist.org/packages/phlak/strgen)
-[![License](https://poser.pugx.org/phlak/strgen/license.png)](https://packagist.org/packages/phlak/strgen)
-[![Build Status](https://travis-ci.org/PHLAK/strgen.svg?branch=master)](https://travis-ci.org/PHLAK/strgen)
+[![Latest Stable Version](https://img.shields.io/packagist/v/phlak/strgen.svg)](https://packagist.org/packages/phlak/strgen)
+[![Total Downloads](https://img.shields.io/packagist/dt/phlak/strgen.svg)](https://packagist.org/packages/phlak/strgen)
+[![Author](https://img.shields.io/badge/author-Chris%20Kankiewicz-blue.svg)](https://www.ChrisKankiewicz.com)
+[![License](https://img.shields.io/packagist/l/phlak/strgen.svg)](https://packagist.org/packages/phlak/strgen)
+[![Build Status](https://img.shields.io/travis/phlak/strgen.svg)](https://travis-ci.org/phlak/strgen)
 
 Generate securely random strings (e.g. - passwords / salts).
 
