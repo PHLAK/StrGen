@@ -22,7 +22,6 @@ Example Usage
 -------------
 
 ```php
-
 // Import StrGen
 use StrGen;
 
