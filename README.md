@@ -5,7 +5,7 @@ StrGen
 [![Total Downloads](https://img.shields.io/packagist/dt/phlak/strgen.svg)](https://packagist.org/packages/phlak/strgen)
 [![Author](https://img.shields.io/badge/author-Chris%20Kankiewicz-blue.svg)](https://www.ChrisKankiewicz.com)
 [![License](https://img.shields.io/packagist/l/phlak/strgen.svg)](https://packagist.org/packages/phlak/strgen)
-[![Build Status](https://img.shields.io/travis/PHLAK/strgen.svg)](https://travis-ci.org/PHLAK/strgen)
+[![Build Status](https://img.shields.io/travis/PHLAK/StrGen.svg)](https://travis-ci.org/PHLAK/StrGen)
 
 Generate securely random strings (e.g. - passwords / salts).
 
