@@ -2,8 +2,6 @@
 
 namespace StrGen;
 
-use Exception;
-
 /**
  * Random secure string generation library.
  *
@@ -12,8 +10,8 @@ use Exception;
  * @author Chris Kankiewicz (http://www.chriskankiewicz.com)
  * @copyright 2016 Chris Kankiewicz
  */
-class Generator {
-
+class Generator
+{
     /** @var string|array String of characters or an array of pre-defined sets */
     protected $characterSet = null;
 
@@ -26,17 +24,15 @@ class Generator {
         'extra'   => '{}[]<>:;/\|~'
     ];
 
-
     /**
      * StrGen\Generator constructor function, runs on object creation.
      *
      * @param string|array $charset A string of characters or an array of pre-defined sets.
      *                              Available sets: lower, upper, numeric, special, extra
      */
-    public function __construct($charset = null) {
-
+    public function __construct($charset = null)
+    {
         switch (gettype($charset)) {
-
             case 'string':
                 $this->characterSet = $charset;
                 break;
@@ -52,11 +48,8 @@ class Generator {
                     $this->characterSet .= $set;
                 }
                 break;
-
         }
-
     }
-
 
     /**
      * Generate a random string of characters with a specified length.
@@ -65,18 +58,16 @@ class Generator {
      *
      * @return string Random string of specified length
      */
-    public function generate($length) {
-
+    public function generate($length)
+    {
         if ($length <= 0) throw new InvalidArgumentException('$length must be > 0');
 
         $string = '';
-
         while (strlen($string) < $length) {
             $string .= $this->randomCharacter($this->characterSet);
         }
 
         return $string;
-
     }
 
     /**
@@ -86,10 +77,11 @@ class Generator {
      *
      * @return string         A single character
      */
-    private function randomCharacter($string) {
+    private function randomCharacter($string)
+    {
         $max = strlen($this->characterSet) - 1;
         $int = hexdec(bin2hex(openssl_random_pseudo_bytes(4)));
+
         return substr($this->characterSet, $int % $max, 1);
     }
-
 }
