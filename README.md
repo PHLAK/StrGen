@@ -7,7 +7,7 @@ StrGen
 [![License](https://img.shields.io/packagist/l/phlak/strgen.svg)](https://packagist.org/packages/phlak/strgen)
 [![Build Status](https://img.shields.io/travis/PHLAK/strgen.svg)](https://travis-ci.org/PHLAK/strgen)
 
-Generate securely random strings (e.g. - passwords / salts).
+Generate secure random strings (e.g. - passwords / salts).
 
 Like this project? Keep me caffeinated by [making a donation](https://paypal.me/ChrisKankiewicz).
 
@@ -41,7 +41,7 @@ specify which set(s) to use by passing an array of set names to the StrGen class
 **Example using built-in sets:**
 
 ```php
-generator = new StrGen\Generator(array('lower', 'upper', 'numeric'));
+$generator = new StrGen\Generator(['lower', 'upper', 'numeric']);
 ```
 
 **Available presets:**
