@@ -1,6 +1,6 @@
 {
     "name": "phlak/strgen",
-    "description": "Generate random strings (passwords / salts)",
+    "description": "Generate secure random strings (passwords / salts)",
     "keywords": ["string", "generation", "password", "salt"],
     "license": "MIT",
     "authors": [
@@ -11,7 +11,7 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/PHLAK/strgen/issues"
+        "issues": "https://github.com/PHLAK/StrGen/issues"
     },
     "require": {
         "php" : ">=5.4.0"
