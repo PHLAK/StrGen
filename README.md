@@ -11,6 +11,12 @@ Generate secure random strings (e.g. - passwords / salts).
 
 Like this project? Keep me caffeinated by [making a donation](https://paypal.me/ChrisKankiewicz).
 
+
+Requirements
+------------
+
+  - [PHP](https://php.net) >= 5.6
+
 Install with Composer
 ---------------------
 
