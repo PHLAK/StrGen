@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "StrGen\\": "src/"
+            "StrGen\\": "src/StrGen/"
         }
     }
 }
