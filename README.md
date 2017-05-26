@@ -81,4 +81,4 @@ Please report bugs to the [GitHub Issue Tracker](https://github.com/PHLAK/StrGen
 Copyright
 ---------
 
-This project is liscensed under the [MIT License](https://github.com/PHLAK/StrGen/blob/master/LICENSE).
+This project is licensed under the [MIT License](https://github.com/PHLAK/StrGen/blob/master/LICENSE).
