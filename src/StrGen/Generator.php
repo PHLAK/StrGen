@@ -17,11 +17,11 @@ class Generator
 
     /** @var array Pre-defined character sets */
     protected $availableSets = [
-        'lower'   => 'abcdefghijklmnopqrstuvwxyz',
-        'upper'   => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+        'lower' => 'abcdefghijklmnopqrstuvwxyz',
+        'upper' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
         'numeric' => '0123456789',
         'special' => '!@#$%^&*()-_=+.?',
-        'extra'   => '{}[]<>:;/\|~'
+        'extra' => '{}[]<>:;/\|~'
     ];
 
     /**
@@ -60,8 +60,9 @@ class Generator
      */
     public function generate($length)
     {
-        if ($length <= 0) throw new InvalidArgumentException('$length must be > 0');
-
+        if ($length <= 0) {
+            throw new InvalidArgumentException('$length must be > 0');
+        }
         $string = '';
         while (strlen($string) < $length) {
             $string .= $this->randomCharacter($this->characterSet);
@@ -71,11 +72,11 @@ class Generator
     }
 
     /**
-     * Get a random character from a string
+     * Get a random character from a string.
      *
-     * @param  string $string String of characters
+     * @param string $string String of characters
      *
-     * @return string         A single character
+     * @return string A single character
      */
     private function randomCharacter($string)
     {

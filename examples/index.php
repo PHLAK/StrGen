@@ -4,19 +4,19 @@
     require_once '../vendor/autoload.php';
 
     // Initialize StrGen
-    $strGen   = new StrGen\StrGen();
-    $alphaNum = new StrGen\StrGen(array('lower', 'upper', 'numeric'));
+    $strGen = new StrGen\StrGen();
+    $alphaNum = new StrGen\StrGen(['lower', 'upper', 'numeric']);
 
 ?>
 
 <h5>16 Characters (Full Character Set)</h5>
 
-<?php for($i = 0; $i < 16; $i++):?>
+<?php for ($i = 0; $i < 16; ++$i):?>
     <code><?php echo htmlentities($strGen->generate(16)); ?></code>
 <?php endfor; ?>
 
 <h5>24 Characters (Limited Character Set)</h5>
-<?php for($i = 0; $i < 16; $i++):?>
+<?php for ($i = 0; $i < 16; ++$i):?>
     <code><?php echo htmlentities($alphaNum->generate(24)); ?></code>
 <?php endfor; ?>
 
