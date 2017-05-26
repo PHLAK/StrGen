@@ -24,15 +24,15 @@ Install with Composer
 composer require phlak/strgen
 ```
 
-Example Usage
--------------
+Usage
+-----
 
 ```php
 // Import StrGen
-use StrGen;
+use StrGen\Generator;
 
 // Initialize the Generator
-$generator = new StrGen\Generator();
+$generator = new Generator();
 
 // Generate a random string of characters
 $password = $generator->generate(16); // Returns something like '8a*Ag@I0*s0v[S3u'
@@ -46,7 +46,7 @@ specify which set(s) to use by passing an array of set names to the StrGen class
 **Example using built-in sets:**
 
 ```php
-$generator = new StrGen\Generator(['lower', 'upper', 'numeric']);
+$generator = new Generator(['lower', 'upper', 'numeric']);
 ```
 
 **Available presets:**
@@ -65,7 +65,7 @@ You can also manually define a character set by passing a string of characters
 to the StrGen class:
 
 ```php
-$generator = new StrGen\Generator('0123456789abcdef');
+$generator = new Generator('0123456789abcdef');
 ```
 
 Changelog
