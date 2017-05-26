@@ -68,6 +68,11 @@ to the StrGen class:
 $generator = new StrGen\Generator('0123456789abcdef');
 ```
 
+Changelog
+---------
+
+A list of changes can be found on the [GitHub Releases](https://github.com/PHLAK/StrGen/releases) page.
+
 Troubleshooting
 ---------------
 
