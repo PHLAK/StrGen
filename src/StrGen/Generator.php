@@ -80,9 +80,9 @@ class Generator
      */
     private function randomCharacter($string)
     {
-        $max = strlen($this->characterSet) - 1;
+        $max = strlen($string) - 1;
         $int = hexdec(bin2hex(openssl_random_pseudo_bytes(4)));
 
-        return substr($this->characterSet, $int % $max, 1);
+        return substr($string, $int % $max, 1);
     }
 }
