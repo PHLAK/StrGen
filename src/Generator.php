@@ -8,7 +8,7 @@ namespace PHLAK\StrGen;
  * This software is liscensed under the MIT License.
  *
  * @author Chris Kankiewicz (http://www.chriskankiewicz.com)
- * @copyright 2016 Chris Kankiewicz
+ * @copyright 2017 Chris Kankiewicz
  */
 class Generator
 {
