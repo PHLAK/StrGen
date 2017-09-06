@@ -1,6 +1,6 @@
 <?php
 
-namespace StrGen;
+namespace PHLAK\StrGen;
 
 /**
  * Random secure string generation library.

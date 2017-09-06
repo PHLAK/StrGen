@@ -30,10 +30,10 @@ Usage
 
 ```php
 // Import StrGen
-use StrGen\Generator;
+use PHLAK\StrGen;
 
 // Initialize the Generator
-$generator = new Generator();
+$generator = new StrGen\Generator();
 
 // Generate a random string of characters
 $password = $generator->generate(16); // Returns something like '8a*Ag@I0*s0v[S3u'
@@ -47,7 +47,7 @@ specify which set(s) to use by passing an array of set names to the StrGen class
 **Example using built-in sets:**
 
 ```php
-$generator = new Generator(['lower', 'upper', 'numeric']);
+$generator = new StrGen\Generator(['lower', 'upper', 'numeric']);
 ```
 
 **Available presets:**
@@ -66,7 +66,7 @@ You can also manually define a character set by passing a string of characters
 to the StrGen class:
 
 ```php
-$generator = new Generator('0123456789abcdef');
+$generator = new StrGen\Generator('0123456789abcdef');
 ```
 
 Changelog

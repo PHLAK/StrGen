@@ -1,6 +1,6 @@
 <?php
 
-use StrGen\Generator;
+use PHLAK\StrGen\Generator;
 
 class StrGenTest extends PHPUnit_Framework_TestCase
 {

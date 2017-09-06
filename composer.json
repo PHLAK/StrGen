@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "StrGen\\": "src/StrGen/"
+            "PHLAK\\StrGen\\": "src/"
         }
     }
 }
