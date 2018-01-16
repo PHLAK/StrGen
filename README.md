@@ -8,7 +8,7 @@ StrGen
 [![Build Status](https://img.shields.io/travis/PHLAK/StrGen.svg)](https://travis-ci.org/PHLAK/StrGen)
 [![StyleCI](https://styleci.io/repos/19445250/shield?branch=master)](https://styleci.io/repos/19445250)
 
-Generate secure random strings (e.g. - passwords / salts).
+PHP library for simple secure random string generation (e.g. - passwords / salts) -- by, [Chris Kankiewicz](https://www.ChrisKankiewicz.com) ([@PHLAK](https://twitter.com/PHLAK))
 
 Like this project? Keep me caffeinated by [making a donation](https://paypal.me/ChrisKankiewicz).
 
