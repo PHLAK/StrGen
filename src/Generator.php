@@ -2,35 +2,24 @@
 
 namespace PHLAK\StrGen;
 
-/**
- * Random secure string generation library.
- *
- * This software is liscensed under the MIT License.
- *
- * @author Chris Kankiewicz (http://www.chriskankiewicz.com)
- * @copyright 2017 Chris Kankiewicz
- */
+use InvalidArgumentException;
+
 class Generator
 {
-    /** @var string|array String of characters or an array of pre-defined sets */
-    protected $characterSet = null;
+    /** @var string String of characters used to generate our random string */
+    protected $characterSet = CharSet::ALL;
 
-    /** @var array Pre-defined character sets */
-    protected $availableSets = [
-        'lower' => 'abcdefghijklmnopqrstuvwxyz',
-        'upper' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-        'numeric' => '0123456789',
-        'special' => '!@#$%^&*()-_=+.?',
-        'extra' => '{}[]<>:;/\|~'
-    ];
+    /** @var int Length of random string to be generated */
+    protected $length = 42;
 
     /**
-     * StrGen\Generator constructor function, runs on object creation.
+     * Set the character set to be used for random string generation.
      *
-     * @param string|array $charset A string of characters or an array of pre-defined sets.
-     *                              Available sets: lower, upper, numeric, special, extra
+     * @param string|array $charset a string of characters or an array of pre-defined sets
+     *
+     * @return Generator This Generator object
      */
-    public function __construct($charset = null)
+    public function charset($charset)
     {
         switch (gettype($charset)) {
             case 'string':
@@ -38,33 +27,43 @@ class Generator
                 break;
 
             case 'array':
-                foreach ($charset as $set) {
-                    $this->characterSet .= $this->availableSets[$set];
-                }
+                $this->characterSet = implode($charset);
                 break;
 
             default:
-                foreach ($this->availableSets as $set) {
-                    $this->characterSet .= $set;
-                }
-                break;
+                throw new InvalidArgumentException('Failed to initialize with the specified character set');
         }
+
+        return $this;
     }
 
     /**
-     * Generate a random string of characters with a specified length.
+     * Set the desired length of the random string to be generated.
      *
-     * @param int $length Length of desired string
+     * @param int $length Desired length of the random string
      *
-     * @return string Random string of specified length
+     * @return Generator This Generator object
      */
-    public function generate($length)
+    public function length($length)
     {
-        if ($length <= 0) {
-            throw new InvalidArgumentException('$length must be > 0');
+        if (! is_int($length) || $length <= 0) {
+            throw new InvalidArgumentException('Length must be in integer greater than 0');
         }
+
+        $this->length = $length;
+
+        return $this;
+    }
+
+    /**
+     * Generate a random string of characters.
+     *
+     * @return string A random string of characters
+     */
+    public function generate()
+    {
         $string = '';
-        while (strlen($string) < $length) {
+        while (strlen($string) < $this->length) {
             $string .= $this->randomCharacter($this->characterSet);
         }
 
