@@ -36,37 +36,66 @@ use PHLAK\StrGen;
 $generator = new StrGen\Generator();
 
 // Generate a random string of characters
-$password = $generator->generate(16); // Returns something like '8a*Ag@I0*s0v[S3u'
+$password = $generator->length(16)->generate(); // Returns something like '8a*Ag@I0*s0v[S3u'
 ```
 
 ### Character Sets
 
 StrGen has a few built-in character sets available for ease of use. You can
-specify which set(s) to use by passing an array of set names to the StrGen class:
+specify which set(s) to use by passing a character set or an an array of sets
+to the `charset()` method.
 
 **Example using built-in sets:**
 
 ```php
-$generator = new StrGen\Generator(['lower', 'upper', 'numeric']);
+$generator = new StrGen\Generator();
+
+$generator->charset(StrGen\CharSet::ALPHA_NUMERIC)->generate();
+
+// or
+
+$generator->charset([StrGen\CharSet::MIXED_ALPHA, StrGen\CharSet::NUMERIC])->generate();
 ```
 
 **Available presets:**
 
-| Key       | Character Set                |
-| --------- | ---------------------------- |
-| `lower`   | `abcdefghijklmnopqrstuvwxyz` |
-| `upper`   | `ABCDEFGHIJKLMNOPQRSTUVWXYZ` |
-| `numeric` | `0123456789`                 |
-| `special` | `!@#$%^&*()-_=+.?`           |
-| `extra`   | `{}[]<>:;/\|~`               |
+| Key                             | Character Set                |
+| ------------------------------- | ---------------------------- |
+| `StrGen\CharSet::LOWER_ALPHA`   | `abcdefghijklmnopqrstuvwxyz` |
+| `StrGen\CharSet::UPPER_ALPHA`   | `ABCDEFGHIJKLMNOPQRSTUVWXYZ` |
+| `StrGen\CharSet::MIXED_ALPHA`   | `abcdefghijklmnopqrstuvwxyz`<br>`ABCDEFGHIJKLMNOPQRSTUVWXYZ` |
+| `StrGen\CharSet::NUMERIC`       | `0123456789` |
+| `StrGen\CharSet::ALPHA_NUMERIC` | `abcdefghijklmnopqrstuvwxyz`<br>`ABCDEFGHIJKLMNOPQRSTUVWXYZ`<br>`0123456789` |
+| `StrGen\CharSet::SPECIAL`       | `!@#$%^&*()-_=+.?{}[]<>:;/\|~` |
+| `StrGen\CharSet::ALL`           | `abcdefghijklmnopqrstuvwxyz`<br>`ABCDEFGHIJKLMNOPQRSTUVWXYZ`<br>`0123456789`<br>`!@#$%^&*()-_=+.?{}[]<>:;/\|~` |
 
 **Custom sets:**
 
 You can also manually define a character set by passing a string of characters
-to the StrGen class:
+to the `charset()` method.
 
 ```php
-$generator = new StrGen\Generator('0123456789abcdef');
+$generator = new StrGen\Generator();
+
+$generator->charset('0123456789abcdef')->generate();
+```
+
+### Convenience Functions
+
+StrGen also has built-in convenience functions for generating strings from the
+included character sets or a custom character set.
+
+```php
+$generator = new StrGen\Generator();
+
+$generator->lowerAlpha($length);
+$generator->upperAlpha($length);
+$generator->mixedAlpha($length);
+$generator->numeric($length);
+$generator->alphaNumeric($length);
+$generator->special($length);
+$generator->all($length);
+$generator->custom($length, $charset);
 ```
 
 Changelog
