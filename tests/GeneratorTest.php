@@ -24,7 +24,7 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
 
         $this->setExpectedException(\InvalidArgumentException::class);
 
-        $custom = $generator->charset(1337);
+        $custom = $generator->charset(null);
     }
 
     public function test_it_throws_an_exception_when_passing_an_invalid_type_to_length()
@@ -33,10 +33,23 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
 
         $this->setExpectedException(\InvalidArgumentException::class);
 
-        $custom = $generator->length(true);
+        $custom = $generator->length(null);
     }
 
-    public function test_it_can_generate_a_string_from_a_custom_character_set()
+    public function test_it_can_use_the_fluent_syntax_to_generate_a_string_using_an_array_of_predefined_character_sets()
+    {
+        $generator = new StrGen\Generator;
+
+        $combined = $generator->charset([
+            StrGen\CharSet::LOWER_ALPHA,
+            StrGen\CharSet::UPPER_ALPHA,
+            StrGen\CharSet::NUMERIC
+        ])->length(16)->generate();
+
+        $this->assertRegExp('/^[a-zA-Z0-9]{16}$/', $combined);
+    }
+
+    public function test_it_can_use_the_fluent_syntax_to_generate_a_string_using_a_custom_character_set()
     {
         $generator = new StrGen\Generator;
 
@@ -49,7 +62,7 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
     {
         $generator = new StrGen\Generator;
 
-        $lowerAlpha = $generator->charset(StrGen\CharSet::LOWER_ALPHA)->length(16)->generate();
+        $lowerAlpha = $generator->lowerAlpha(16);
 
         $this->assertRegExp('/^[a-z]{16}$/', $lowerAlpha);
     }
@@ -58,7 +71,7 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
     {
         $generator = new StrGen\Generator;
 
-        $upperAlpha = $generator->charset(StrGen\Charset::UPPER_ALPHA)->length(16)->generate();
+        $upperAlpha = $generator->upperAlpha(16);
 
         $this->assertRegExp('/^[A-Z]{16}$/', $upperAlpha);
     }
@@ -67,7 +80,7 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
     {
         $generator = new StrGen\Generator;
 
-        $mixedAlpha = $generator->charset(StrGen\Charset::MIXED_ALPHA)->length(16)->generate();
+        $mixedAlpha = $generator->mixedAlpha(16);
 
         $this->assertRegExp('/^[a-zA-Z]{16}$/', $mixedAlpha);
     }
@@ -76,7 +89,7 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
     {
         $generator = new StrGen\Generator;
 
-        $numeric = $generator->charset(StrGen\Charset::NUMERIC)->length(16)->generate();
+        $numeric = $generator->numeric(16);
 
         $this->assertRegExp('/^[0-9]{16}$/', $numeric);
     }
@@ -85,7 +98,7 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
     {
         $generator = new StrGen\Generator;
 
-        $alphaNumeric = $generator->charset(StrGen\CharSet::ALPHA_NUMERIC)->length(16)->generate();
+        $alphaNumeric = $generator->alphaNumeric(16);
 
         $this->assertRegExp('/^[a-zA-Z0-9]{16}$/', $alphaNumeric);
     }
@@ -94,7 +107,7 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
     {
         $generator = new StrGen\Generator;
 
-        $special = $generator->charset(StrGen\CharSet::SPECIAL)->length(16)->generate();
+        $special = $generator->special(16);
 
         $this->assertRegExp('/^[!@#$%^&*()-_=+.?{}\[\]<>:;\/\\\|~]{16}$/', $special);
     }
@@ -103,22 +116,31 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
     {
         $generator = new StrGen\Generator;
 
-        $special = $generator->charset(StrGen\CharSet::ALL)->length(16)->generate();
+        $special = $generator->all(16);
 
         $this->assertRegExp('/^[a-zA-Z0-9!@#$%^&*()-_=+.?{}\[\]<>:;\/\\\|~]{16}$/', $special);
     }
 
-    public function test_it_can_generate_a_string_from_combined_character_sets()
+    public function test_it_can_generate_a_string_from_an_array_of_character_sets()
     {
         $generator = new StrGen\Generator;
 
-        $combined = $generator->charset([
+        $custom = $generator->custom(16, [
             StrGen\CharSet::LOWER_ALPHA,
             StrGen\CharSet::UPPER_ALPHA,
             StrGen\CharSet::NUMERIC
-        ])->length(16)->generate();
+        ]);
 
-        $this->assertRegExp('/^[a-zA-Z0-9]{16}$/', $combined);
+        $this->assertRegExp('/^[a-zA-Z0-9]{16}$/', $custom);
+    }
+
+    public function test_it_can_generate_a_string_from_a_custom_character_set()
+    {
+        $generator = new StrGen\Generator;
+
+        $custom = $generator->custom(16, '0123456789abcdef');
+
+        $this->assertRegExp('/^[0-9a-f]{16}$/', $custom);
     }
 
     public function test_it_doesnt_generate_the_same_string_twice()
