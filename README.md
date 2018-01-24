@@ -36,14 +36,14 @@ use PHLAK\StrGen;
 $generator = new StrGen\Generator();
 
 // Generate a random string of characters
-$password = $generator->length(16)->generate(); // Returns something like '8a*Ag@I0*s0v[S3u'
+$generator->length(16)->generate(); // Returns something like '8a*Ag@I0*s0v[S3u'
 ```
 
 ### Character Sets
 
 StrGen has a few built-in character sets available for ease of use. You can
-specify which set(s) to use by passing a character set or an an array of sets
-to the `charset()` method.
+specify which set(s) to use by passing a character set or an array of sets to
+the `charset()` method.
 
 **Example using built-in sets:**
 
@@ -66,8 +66,8 @@ $generator->charset([StrGen\CharSet::MIXED_ALPHA, StrGen\CharSet::NUMERIC])->gen
 | `StrGen\CharSet::MIXED_ALPHA`   | `abcdefghijklmnopqrstuvwxyz`<br>`ABCDEFGHIJKLMNOPQRSTUVWXYZ` |
 | `StrGen\CharSet::NUMERIC`       | `0123456789` |
 | `StrGen\CharSet::ALPHA_NUMERIC` | `abcdefghijklmnopqrstuvwxyz`<br>`ABCDEFGHIJKLMNOPQRSTUVWXYZ`<br>`0123456789` |
-| `StrGen\CharSet::SPECIAL`       | `!@#$%^&*()-_=+.?{}[]<>:;/\|~` |
-| `StrGen\CharSet::ALL`           | `abcdefghijklmnopqrstuvwxyz`<br>`ABCDEFGHIJKLMNOPQRSTUVWXYZ`<br>`0123456789`<br>`!@#$%^&*()-_=+.?{}[]<>:;/\|~` |
+| `StrGen\CharSet::SPECIAL`       | `!@#$%^&*()-_=+.?{}[]<>:;/\\|~` |
+| `StrGen\CharSet::ALL`           | `abcdefghijklmnopqrstuvwxyz`<br>`ABCDEFGHIJKLMNOPQRSTUVWXYZ`<br>`0123456789`<br>`!@#$%^&*()-_=+.?{}[]<>:;/\\|~` |
 
 **Custom sets:**
 
@@ -86,8 +86,6 @@ StrGen also has built-in convenience functions for generating strings from the
 included character sets or a custom character set.
 
 ```php
-$generator = new StrGen\Generator();
-
 $generator->lowerAlpha($length);
 $generator->upperAlpha($length);
 $generator->mixedAlpha($length);
