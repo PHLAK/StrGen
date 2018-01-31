@@ -21,7 +21,7 @@ class GeneratorTest extends TestCase
         $default = $generator->generate();
 
         $this->assertInternalType('string', $default);
-        $this->assertEquals(42, strlen($default));
+        $this->assertRegExp('/^[a-zA-Z0-9!@#$%^&*()-_=+.?{}\[\]<>:;\/\\\|~]{42}$/', $default);
     }
 
     /**
