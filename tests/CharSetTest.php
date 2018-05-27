@@ -1,8 +1,11 @@
 <?php
 
-use PHLAK\StrGen;
+namespace PHPUnit\Framework\TestCase;
 
-class CharSetTest extends PHPUnit_Framework_TestCase
+use PHLAK\StrGen;
+use PHPUnit\Framework\TestCase;
+
+class CharSetTest extends TestCase
 {
     public function test_it_has_a_lower_alpha_characters_set()
     {
