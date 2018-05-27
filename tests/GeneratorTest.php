@@ -1,8 +1,11 @@
 <?php
 
-use PHLAK\StrGen;
+namespace PHLAK\StrGen\Tests;
 
-class GeneratorTest extends PHPUnit_Framework_TestCase
+use PHLAK\StrGen;
+use PHPUnit\Framework\TestCase;
+
+class GeneratorTest extends TestCase
 {
     public function test_it_can_be_initialized()
     {
@@ -16,22 +19,27 @@ class GeneratorTest extends PHPUnit_Framework_TestCase
         $generator = new StrGen\Generator;
 
         $default = $generator->generate();
+
+        $this->assertInternalType('string', $default);
+        $this->assertEquals(42, strlen($default));
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     */
     public function test_it_throws_an_exception_when_passing_an_invalid_type_to_charset()
     {
         $generator = new StrGen\Generator;
 
-        $this->setExpectedException(\InvalidArgumentException::class);
-
         $custom = $generator->charset(null);
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     */
     public function test_it_throws_an_exception_when_passing_an_invalid_type_to_length()
     {
         $generator = new StrGen\Generator;
-
-        $this->setExpectedException(\InvalidArgumentException::class);
 
         $custom = $generator->length(null);
     }
