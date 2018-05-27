@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPUnit\Framework\TestCase;
+namespace PHLAK\StrGen\Tests;
 
 use PHLAK\StrGen;
 use PHPUnit\Framework\TestCase;

@@ -4,6 +4,7 @@ namespace PHLAK\StrGen\Tests;
 
 use PHLAK\StrGen;
 use PHPUnit\Framework\TestCase;
+use InvalidArgumentException;
 
 class GeneratorTest extends TestCase
 {
@@ -24,22 +25,20 @@ class GeneratorTest extends TestCase
         $this->assertRegExp('/^[a-zA-Z0-9!@#$%^&*()-_=+.?{}\[\]<>:;\/\\\|~]{42}$/', $default);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function test_it_throws_an_exception_when_passing_an_invalid_type_to_charset()
     {
         $generator = new StrGen\Generator;
 
+        $this->expectException(InvalidArgumentException::class);
+
         $custom = $generator->charset(null);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function test_it_throws_an_exception_when_passing_an_invalid_type_to_length()
     {
         $generator = new StrGen\Generator;
+
+        $this->expectException(InvalidArgumentException::class);
 
         $custom = $generator->length(null);
     }
