@@ -1,13 +1,19 @@
-![StrGen](strgen.png)
+<p align="center">
+  <img src="strgen.png" alt="StrGen" width="66%">
+</p>
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/phlak/strgen.svg)](https://packagist.org/packages/phlak/strgen)
-[![Total Downloads](https://img.shields.io/packagist/dt/phlak/strgen.svg)](https://packagist.org/packages/phlak/strgen)
-[![Author](https://img.shields.io/badge/author-Chris%20Kankiewicz-blue.svg)](https://www.ChrisKankiewicz.com)
-[![License](https://img.shields.io/packagist/l/phlak/strgen.svg)](https://packagist.org/packages/phlak/strgen)
-[![Build Status](https://img.shields.io/travis/PHLAK/StrGen.svg)](https://travis-ci.org/PHLAK/StrGen)
-[![StyleCI](https://styleci.io/repos/19445250/shield?branch=master)](https://styleci.io/repos/19445250)
+<p align="center">
+  <a href="https://packagist.org/packages/phlak/strgen"><img src="https://img.shields.io/packagist/v/phlak/strgen.svg" alt="Latest Stable Version"></a>
+  <a href="https://packagist.org/packages/phlak/strgen"><img src="https://img.shields.io/packagist/dt/phlak/strgen.svg" alt="Total Downloads"></a>
+  <a href="https://www.ChrisKankiewicz.com"><img src="https://img.shields.io/badge/author-Chris%20Kankiewicz-blue.svg" alt="Author"></a>
+  <a href="https://packagist.org/packages/phlak/strgen"><img src="https://img.shields.io/packagist/l/phlak/strgen.svg" alt="License"></a>
+  <a href="https://travis-ci.org/PHLAK/StrGen"><img src="https://img.shields.io/travis/PHLAK/StrGen.svg" alt="Build Status"></a>
+  <a href="https://styleci.io/repos/19445250"><img src="https://styleci.io/repos/19445250/shield?branch=master" alt="StyleCI"></a>
+</p>
 
-PHP library for simple secure random string generation (e.g. - passwords / salts) -- by, [Chris Kankiewicz](https://www.ChrisKankiewicz.com) ([@PHLAK](https://twitter.com/PHLAK))
+<p align="center">
+  PHP library for simple secure random string generation (e.g. - passwords / salts) -- by, <a href="https://www.ChrisKankiewicz.com">Chris Kankiewicz</a> (<a href="https://twitter.com/PHLAK">@PHLAK</a>)
+</p>
 
 #### Like this project?
 
