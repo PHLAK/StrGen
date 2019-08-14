@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="strgen.png" alt="StrGen" width="66%">
+  <img src="strgen.png" alt="StrGen" width="50%">
 </p>
 
 <p align="center">
