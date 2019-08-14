@@ -4,3 +4,4 @@
 .php_cs.dist    export-ignore
 .travis.yml     export-ignore
 phpunit.xml     export-ignore
+strgen.png      export-ignore
