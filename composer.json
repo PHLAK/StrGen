@@ -18,6 +18,7 @@
     },
     "require-dev": {
         "phlak/coding-standards": "^1.2",
+        "vimeo/psalm": "^4.7",
         "yoast/phpunit-polyfills": "^0.2.0"
     },
     "autoload": {
