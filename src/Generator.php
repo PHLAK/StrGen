@@ -24,10 +24,12 @@ class Generator
         switch (gettype($charset)) {
             case 'string':
                 $this->characterSet = $charset;
+
                 break;
 
             case 'array':
                 $this->characterSet = implode($charset);
+
                 break;
 
             default:
@@ -180,7 +182,7 @@ class Generator
     /**
      * Generating a random string from a custom character set.
      *
-     * @param int          $length  Desired length of the random string
+     * @param int $length Desired length of the random string
      * @param string|array $charset a string of characters or an array of pre-defined sets
      *
      * @return string A random string of characters
