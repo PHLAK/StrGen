@@ -20,7 +20,7 @@
         "friendsofphp/php-cs-fixer": "^2.19",
         "phlak/coding-standards": "^1.2",
         "vimeo/psalm": "^4.7",
-        "yoast/phpunit-polyfills": "^0.2.0"
+        "yoast/phpunit-polyfills": "^1.0.2"
     },
     "autoload": {
         "psr-4": {
