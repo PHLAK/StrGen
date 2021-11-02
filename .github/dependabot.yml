@@ -6,6 +6,5 @@ updates:
     interval: monthly
     time: "04:00"
     timezone: US/Arizona
-  open-pull-requests-limit: 10
   assignees:
   - PHLAK
